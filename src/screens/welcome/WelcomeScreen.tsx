@@ -75,9 +75,7 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
         <View
           style={{ ...StyleSheet.absoluteFillObject, ...styles.lightLine }}
         />
-        <View>
-          <Header />
-        </View>
+        <Header />
         <View style={styles.imgContainer}>
           <Image
             source={require('../../../assets/img/flower.png')}
@@ -90,7 +88,7 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
         </View>
       </View>
       <View style={styles.lower}>
-        <WelcomeCard />
+        <WelcomeCard {...{ navigation }} />
       </View>
     </View>
   );

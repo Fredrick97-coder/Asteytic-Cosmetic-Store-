@@ -1,6 +1,7 @@
 export const colors = {
-  primary: '#A06450',
+  primary: '#91503b',
   secondary: '#F0BD9D',
   btn: '#FE9837',
-  shadow: 'rgba(0, 0, 0, 0.031)',
+  shadow: '#ac725e88',
+  bell: '#7D4B3B',
 };

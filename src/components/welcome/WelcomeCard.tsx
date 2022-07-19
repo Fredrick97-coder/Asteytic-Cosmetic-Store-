@@ -31,11 +31,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: 'bold',
+    fontFamily: 'PoppinsSemiBold',
   },
   desc: {
     fontSize: 16,
     marginBottom: 30,
     color: '#ccc',
+    fontFamily: 'PoppinsRegular',
   },
   btn: {
     justifyContent: 'center',
@@ -49,9 +51,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+    fontFamily: 'PoppinsSemiBold',
+    letterSpacing: 1,
   },
 });
-const WelcomeCard = () => {
+
+const WelcomeCard = ({ navigation }: any) => {
   return (
     <View style={styles.card}>
       <View style={styles.titleWrapper}>
@@ -62,7 +67,10 @@ const WelcomeCard = () => {
         We care about what goes on your skin, because of what's within. Our
         assortment is top-rated, curated & authenticated
       </Text>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() => navigation.navigate('Home')}
+      >
         <Text style={styles.btnText}>Explore Our Product</Text>
       </TouchableOpacity>
     </View>
