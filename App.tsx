@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { LoadAssets } from './src/components';
 import { RootNavigator } from './src/navigation';

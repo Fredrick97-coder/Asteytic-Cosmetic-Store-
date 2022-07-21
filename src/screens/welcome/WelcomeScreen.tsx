@@ -1,8 +1,10 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useEffect } from 'react';
-import { colors, Header } from '../../components';
+import { colors, Header, LinearGradientComponent } from '../../components';
 import WelcomeCard from '../../components/welcome/WelcomeCard';
+import { useNavigation } from '@react-navigation/native';
+import { MainStackScreenProp } from '../../navigation/RootNavigator';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,14 +15,6 @@ const styles = StyleSheet.create({
     flex: 0.65,
     backgroundColor: colors.primary,
     overflow: 'hidden',
-  },
-  lightLine: {
-    top: -260,
-    right: 0,
-    height: '170%',
-    width: 250,
-    backgroundColor: colors.shadow,
-    transform: [{ rotate: '45deg' }],
   },
   imgContainer: {
     flex: 1,
@@ -58,11 +52,8 @@ const styles = StyleSheet.create({
   },
 });
 
-interface WelcomeProps {
-  navigation: any;
-}
-
-const WelcomeScreen = ({ navigation }: WelcomeProps) => {
+const WelcomeScreen = () => {
+  const navigation = useNavigation<MainStackScreenProp>();
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -72,9 +63,7 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.upper}>
-        <View
-          style={{ ...StyleSheet.absoluteFillObject, ...styles.lightLine }}
-        />
+        <LinearGradientComponent />
         <Header />
         <View style={styles.imgContainer}>
           <Image
@@ -88,7 +77,7 @@ const WelcomeScreen = ({ navigation }: WelcomeProps) => {
         </View>
       </View>
       <View style={styles.lower}>
-        <WelcomeCard {...{ navigation }} />
+        <WelcomeCard />
       </View>
     </View>
   );

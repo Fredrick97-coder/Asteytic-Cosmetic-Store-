@@ -7,6 +7,7 @@ import { colors } from '../colors';
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
+    marginVertical: 20,
   },
   itemWrapper: {
     justifyContent: 'center',

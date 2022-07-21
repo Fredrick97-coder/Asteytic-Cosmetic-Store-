@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import { colors } from '../colors';
+import { useNavigation } from '@react-navigation/native';
+import { MainStackScreenProp } from '../../navigation/RootNavigator';
 
 const { width } = Dimensions.get('window');
 
@@ -56,7 +58,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const WelcomeCard = ({ navigation }: any) => {
+const WelcomeCard = () => {
+  const navigation = useNavigation<MainStackScreenProp>();
+
   return (
     <View style={styles.card}>
       <View style={styles.titleWrapper}>
@@ -69,7 +73,7 @@ const WelcomeCard = ({ navigation }: any) => {
       </Text>
       <TouchableOpacity
         style={styles.btn}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('HomeStack')}
       >
         <Text style={styles.btnText}>Explore Our Product</Text>
       </TouchableOpacity>
